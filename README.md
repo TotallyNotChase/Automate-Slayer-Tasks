@@ -1,6 +1,7 @@
 # A Slayer's Club browser for the lazy (or the busy)
 This is a fairly simple script written in python, using selenium, to automate *daily tasks* on the **Slayer's Club** for **DOOM** by *iD software*.
-The *source code* is included with a fair bit of *comments and documentation* right here, for everyone to see, as well!
+
+The **source code** is included with a fair bit of *comments and documentation* right here, for everyone to see, as well!
 
 ## Features
 The script does the following things upon launch, in this order.
@@ -21,7 +22,7 @@ All you need to do is
 The script should ask you to provide your SC **Username** and **Password** at your first startup.
 Don't worry, this is locally stored (in a hidden file, you can see the file by having privileges though). It's intention is to avoid providing the details every time you wanna run the program.
 
-Now I *really* don't want the file to be messed up with, but for the sake of full disclosure, the file your information, along with information about the amount of events/ giveaways viewed is stored in a file called **User-Settings.txt**, in *plain text format*, in your own system, in the *same* directory, with a *hidden* attribute.
+Now I *really* don't want the file to be messed up with, but for the sake of full disclosure, your information, along with information about the amount of events/ giveaways viewed is stored in a file called **User-Settings.txt**, in *plain text format*, in your own system, in the *same* directory, with a *hidden* attribute.
 
 If you tamper with the file and the information fails sanity check, the file will be **instantly deleted** and the program will start from *scratch*. It's pretty unforgiving about this...
 
@@ -32,7 +33,9 @@ Afterwards, the script will do all the tasks one by one, give it time if it's th
 ## Optimization Concerns
 For **General webpage** visits:
 
-Generally, every crucial webpage is opened in a new window with the root list/homepage as the mainwindow. For stuff like **Forum pages**, where you really just need to *visit it* and not much else, the script will wait until the page is loaded and then it'll immediately close the window.
+The *speed* of script is heavily tied with the **user's internet speed**. The script doesn't use any loops that can go indefinitely and all of these loops have a complexity of O(n), so really, the script is only gonna take time on the *wait intervals* (Waiting for the page to load).
+
+These wait intervals are set *manually* by me, and their upper limit is **10 (seconds) for standard wait** and **30 (seconds) for extended wait**. If the page takes longer than this to load any required element, the script will throw a **request timed out** and exit. This *should* be no problem for most people because I, myself, have third world cheap internet speeds and it works fine for me.
 
 For **Events** and **Giveaways**:
 
@@ -48,14 +51,35 @@ For **Discord Widget**:
 
 This is probably the one most of the problems *might* arise from. The **discord widget loading** is *weird, unpredictable and slow*. So it really depends on the internet connection of the user. Now I'll address these concerns on the **Error Guide** of this README but I'll briefly mention that the **wait** set for the discord widget in the script is *quite long* already. So it should *mostly* be fine for good internet connections.
 
+## Error Guide
+The program has a built in **error handler**, I'd like to think that it'll cover all the exceptions but I can't really be sure without people actually testing it out. Here's the list of their **codes**, along with what *you should do* about them!
+
+The errors contain a *code* and an *optional message*, here's a picture to help you find both of them!
+
+  1. **Code 1**: *Request Timed Out*. This means the page or an element on it took too long to load, the accompanying message should tell you which task the script was performing when this happened. All you can do about this is wait and try again later.
+
+  2. **Code 2**: *Invalid Credentials*. This means your the sign in attempt failed. Make sure your *Username and Password* was correct.
+
+  3. **Code 3**: *Discord widget took too long to respond*. This is a weird issue, the discord widget takes a while to load and the program just won't wait that long, I could make it wait that long, but that's counterproductive.
+  If you get this issue, give it at least one more try, sometimes this error can be thrown only on the first startup but not the consequent one.
+
+  4. **Code 4**: *An unexpected error occurred, make sure that **chromedriver** is present in the same directory*. This happens when the *initial browser creation* fails. This happens most often when chromedriver.exe is NOT present in the *same directory as the script* and/or **chromium (chrome)** is not installed on your PC. Make sure to download chrome driver [here](https://chromedriver.chromium.org/).
+
+  5. **Code 5**: *User-Settings.txt Sanity check failed, please try again later*. This happens when the information about events present in **User-Settings.txt** is either *incorrect* (i.e not numbers) or *not present*. This will instantly delete the file and ask you for your **Username and Password** again. This is why I advice not to tamper with the file itself. *(Unless you just wanna straight up delete it)*
+
 # Troubleshooting
 Please make sure you have chromedriver in the same directory along with chromium (chrome) installed on your computer. Also make sure to allow the program through firewall for it to access the internet.
   * *The program is stuck at "Visting X" and won't continue*:-
 
       The console might just have lost focus, press enter on it and see if it works, there really aren't any loops that can possibly go infinitely long so if the program encounters something wrong, it'll just throw an exception and exit, not run for eternity.
-  * *I get weird errors but the program doesn't close*:-
+  * *I get weird ERROR(#numbers)/INFO(#numbers) but the program doesn't close*:-
 
-    You might encounter some common error codes that have to do with selenium and how the underlying chromium source code works, don't worry, it's nothing serious until the program itself throws any of the Error codes mentioned in the **Error Guide** section.
+    You might encounter some common error codes that have to do with selenium and how the underlying chromium source code works. Some info will also pop up when the script clicks on share and when the script opens the javascript heavy discord widget. Don't worry, it's nothing serious until the program itself throws any of the Error codes mentioned in the **Error Guide** section.
   * *I get error X*:-
 
     Refer to the **Error Guide** section.
+  * *The program says my credentials are wrong even though I'm sure they are right*:-
+
+    Make sure your password doesn't contain escapable characters like `/`, `\`, `"`, `'`. It's fine if it has `@`, `_` or `-` but if it has any escapable characters, I'm sorry to say, this script won't support that, yet.
+
+    If you do use such a password, let me know, I might try to implement something. *(no it doesn't include you telling me your password)*

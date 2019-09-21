@@ -85,29 +85,29 @@ def exitScript(code, message = None):
         browser.close()
         sys.exit(0)
     elif code == 1:
-        input("ERROR: Request timed out, please try again later.\nMessage: " + message + "\n    You may close this console or press any key\n")
+        input("ERROR (1): Request timed out, please try again later.\nMessage: " + message + "\n    You may close this console or press any key\n")
         browser.close()
         sys.exit(1)
     elif code == 2:
-        input("ERROR: Invalid Credentials, please try again.\n    You may close this console or press any key\n")
         # The User-Settings file is removed if the credentials are invalid
         # So it can be created again from scratch
         os.remove("User-Settings.txt")
+        input("ERROR (2): Invalid Credentials, please try again.\n    You may close this console or press any key\n")
         browser.close()
         sys.exit(2)
     elif code == 3:
-        input("ERROR: Discord widget took too long to respond, please try again later.\n    You may close this console or press any key\n")
+        input("ERROR (3): Discord widget took too long to respond, please try again later.\n    You may close this console or press any key\n")
         browser.close()
         sys.exit(3)
     elif code == 4:
-        input("ERROR: An unexpected error occured, make sure that chromedriver is present in the same directory.\n    You may close this console or press any key\n")
+        input("ERROR (4): An unexpected error occurred, make sure that chromedriver is present in the same directory.\n    You may close this console or press any key\n")
         browser.close()
         sys.exit(4)
     elif code == 5:
-        input("ERROR: User-Settings.txt Sanity check failed, please try again later.\n    You may close this console or press any key\n")
         # The User-Settings file is removed if the event/giveaway informations are invalid
         # So it can be created again from scratch
         os.remove("User-Settings.txt")
+        input("ERROR (5): User-Settings.txt Sanity check failed, please try again later.\n    You may close this console or press any key\n")
         browser.close()
         sys.exit(5)
 
@@ -136,7 +136,6 @@ if __name__ == "__main__":
     #Setting up a few explicit wait classes, for standard, extended and discord widget (iframe) loading respectively
     std_wait = ui.WebDriverWait(browser, 10)
     extended_wait = ui.WebDriverWait(browser, 30)
-    iframe_wait = ui.WebDriverWait(browser, 60)
 
     """
     Here, Username and Password are extracted from
