@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Automate-Slayer-points", "Automate-Slayer-points.pyproj", "{04D3DBF9-4B77-489B-9075-F0B5F10498FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04D3DBF9-4B77-489B-9075-F0B5F10498FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D3DBF9-4B77-489B-9075-F0B5F10498FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2F377BD-B0E8-458C-8DE1-6ACB8BEE2AF1}
+	EndGlobalSection
+EndGlobal
