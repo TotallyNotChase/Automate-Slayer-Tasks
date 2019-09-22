@@ -21,6 +21,7 @@ All you need to do is
   1. Download this *repo*
 
   ![](https://i.imgur.com/nuXjOwA.gif)
+
   2. Download **chromedriver.exe** through [this link](https://chromedriver.chromium.org/) and put it in the same directory. Make sure to download the version corresponding to your **Chrome browser version**.
 
   ![](https://i.imgur.com/UJbbVLi.gif)
@@ -28,7 +29,9 @@ All you need to do is
     Alternatively, if you prefer **Firefox**, download **firefoxdriver.exe** through [this link](https://github.com/mozilla/geckodriver/releases)
 
   ![](https://i.imgur.com/8pQDfd6.gif)
+
   3. Run either the .exe or the .py file. Allow it through the *firewall* if needed.
+
   ![](https://i.imgur.com/gkfMz4x.gif)
 
 ## Usage
