@@ -118,7 +118,7 @@ if __name__ == "__main__":
     CHROMEDRIVER_PATH = os.path.join(os.getcwd(), "chromedriver.exe")
     WINDOW_SIZE = "1920,1080"
     chrome_options = option.Options()
-    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument("disable-gpu")
     chrome_options.add_argument("disable-infobars")
@@ -372,17 +372,20 @@ if __name__ == "__main__":
     """
 
     print("Visiting Discord....")
-    browser.get(r"https://slayersclub.bethesda.net/en/#")
-    leaderboard = std_wait.until(EC.presence_of_element_located((by.By.CSS_SELECTOR, "div[class = 'module top-contributors']"))
-                        )
-    browser.execute_script("arguments[0].scrollIntoView();", leaderboard)
-    iframes = std_wait.until(EC.presence_of_all_elements_located((by.By.CSS_SELECTOR, "div[class = 'frame frame--padding']"))
-                                )
-    iframes[1].click()
-    discordframe = extended_wait.until(EC.presence_of_element_located((by.By.CLASS_NAME, "discordIframe"))
-                                        )
-    browser.switch_to.frame(discordframe)
-    extended_wait.until(EC.presence_of_element_located((by.By.CLASS_NAME, "widgetBtnConnect-2fvtGa"))
-                        ).click()
-    
+    try:
+        browser.get(r"https://slayersclub.bethesda.net/en/#")
+        leaderboard = std_wait.until(EC.presence_of_element_located((by.By.CSS_SELECTOR, "div[class = 'module top-contributors']"))
+                            )
+        browser.execute_script("arguments[0].scrollIntoView();", leaderboard)
+        iframes = iframe_wait.until(EC.presence_of_all_elements_located((by.By.CSS_SELECTOR, "div[class = 'frame frame--padding']"))
+                                    )
+        iframes[1].click()
+        extended_wait.until(EC.frame_to_be_available_and_switch_to_it((by.By.CSS_SELECTOR, "#discordIframe"))
+                                            )
+        extended_wait.until(EC.presence_of_element_located((by.By.CLASS_NAME, "widgetBtnConnect-2fvtGa"))
+                            ).click()
+    except:
+        # Exit code 1 is when the page takes too long to load
+        exicScript(1, "Discord Widget")
+
     exitScript(0)

@@ -50,7 +50,7 @@ On the bright side, you can use this on your advantage if you wanna *switch acco
 
 After the initial setup, the script will do all the tasks one by one, give it time if it's the first startup, it'll let you know when it's finished.
 
-![]()
+![](https://i.imgur.com/xDBt4lw.gif)
 
 ## Optimization Concerns
 For **General webpage** visits:
