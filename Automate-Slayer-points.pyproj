@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>04d3dbf9-4b77-489b-9075-f0b5f10498fa</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Automate_Slayer_points.py</StartupFile>
+    <StartupFile>Automate_Slayer_points(Chrome).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Automate_Slayer_points.py" />
+    <Compile Include="Automate_Slayer_Points%28Firefox%29.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Automate_Slayer_points%28Chrome%29.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
