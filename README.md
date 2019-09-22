@@ -25,9 +25,9 @@ All you need to do is
 
   ![](https://i.imgur.com/UJbbVLi.gif)
 
-      Alternatively, if you prefer **Firefox**, download **firefoxdriver.exe** through [this link](https://github.com/mozilla/geckodriver/releases)
+    Alternatively, if you prefer **Firefox**, download **firefoxdriver.exe** through [this link](https://github.com/mozilla/geckodriver/releases)
 
-    ![](https://i.imgur.com/8pQDfd6.gif)
+  ![](https://i.imgur.com/8pQDfd6.gif)
   3. Run either the .exe or the .py file. Allow it through the *firewall* if needed.
   ![](https://i.imgur.com/gkfMz4x.gif)
 
