@@ -26,7 +26,7 @@ All you need to do is
 
   ![](https://i.imgur.com/UJbbVLi.gif)
 
-    Alternatively, if you prefer **Firefox**, download **firefoxdriver.exe** through [this link](https://github.com/mozilla/geckodriver/releases)
+   Alternatively, if you prefer **Firefox**, download **firefoxdriver.exe** through [this link](https://github.com/mozilla/geckodriver/releases)
 
   ![](https://i.imgur.com/8pQDfd6.gif)
 
@@ -101,7 +101,7 @@ Please make sure you have chromedriver/geckodriver in the same directory along w
 
   ![](https://i.imgur.com/eccT32K.png)
 
-    You might encounter some common error codes that have to do with selenium and how the underlying chromium source code works. Some info will also pop up when the script clicks on share and when the script opens the javascript heavy discord widget. Don't worry, it's nothing serious until the program itself throws any of the Error codes mentioned in the **Error Guide** section.
+   You might encounter some common error codes that have to do with selenium and how the underlying chromium source code works. Some info will also pop up when the script clicks on share and when the script opens the javascript heavy discord widget. Don't worry, it's nothing serious until the program itself throws any of the Error codes mentioned in the **Error Guide** section.
   * *I get error X*:-
 
     Refer to the **Error Guide** section.
